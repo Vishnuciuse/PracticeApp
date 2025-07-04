@@ -65,7 +65,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier, viewModel: UserViewMod
         )
 
         Text(
-            text = "Change User Name",
+            text = "Change Name",
             modifier = modifier
                 .padding(8.dp)
                 .background(color = androidx.compose.ui.graphics.Color.Blue)
