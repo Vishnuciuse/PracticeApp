@@ -9,6 +9,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -64,23 +65,16 @@ fun Greeting(name: String, modifier: Modifier = Modifier, viewModel: UserViewMod
             modifier = modifier
         )
 
-        Text(
-            text = "Change Name",
-            modifier = modifier
-                .padding(8.dp)
-                .background(color = androidx.compose.ui.graphics.Color.Blue)
-                .clickable {
-                    name1.value = "Alex"
-                },
-
-        )
-
+        Button(onClick = {name1.value = "Alex"}) {
+            Text("Change Name")
+        }
+        Spacer(modifier = Modifier.padding(16.dp))
         users.forEach {
             Text(
                 text = "Users: ${it.first_name}",
             )
         }
-
+        Spacer(modifier = Modifier.padding(16.dp))
         Row {
             Text(text = counter.toString(), modifier.testTag(stringResource(R.string.countertext)))
             Button(modifier = Modifier.padding(8.dp), onClick = {viewModel.incrementCounter()}) {
